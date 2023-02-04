@@ -1,0 +1,83 @@
+{%extends 'base.html'%} {% block body %}
+<style>
+    h1 {text-align: center;}
+    body{ style="padding: 10px; border: 2px solid;}
+</style>
+<br><br><br>
+<body>
+    <div class="container-sm">
+    <h1>Form</h1>
+    <form class="form" method="POST" enctype="multipart/form-data">{%csrf_token%}
+        <div class="input-group mb-3">
+            <input
+            type="text"
+            class="form-control"
+            placeholder="Name"
+            name="name"
+            />
+        </div>
+
+        <div class="input-group mb-3">
+            <input
+            type="text"
+            class="form-control"
+            placeholder="District"
+            name="dis"
+            />
+
+        </div>
+
+        <div class="input-group mb-3">
+            <input
+            type="text"
+            class="form-control"
+            id="basic-url1"
+            name="fir"
+            placeholder="FIR Number"
+            />
+        </div>
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Age"
+            name="age"
+            />
+        <br>
+        <label for="basic-url" class="form-label">Gender</label>
+        <br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male" />
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female" />
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="others" />
+            <label class="form-check-label" for="inlineRadio3">Other</label>
+        </div>
+        <br>
+        <br>
+        <div class="input-group mb-3">
+
+
+        <div class="input-group mb-3">
+            <input
+            type="date"
+            class="form-control"
+            placeholder="FIR Date:  DD/MM/YYYY"
+            name="date"
+            />
+        </div>
+        <div class="input-group">
+        <input type="file" class="form-control" id="inputGroupFile04" name="image" />
+        </div>
+        <br><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+</body>
+{% endblock body %}

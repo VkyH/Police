@@ -1,0 +1,42 @@
+{%extends 'base.html'%} {% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Video</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+    input[type="file"] {
+      margin-bottom: 25px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <br>
+    <h1>Upload Video</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" name="file">
+      <button type="submit">Upload Video</button>
+    </form>
+  </div>
+</body>
+</html>
+{% endblock body %}
